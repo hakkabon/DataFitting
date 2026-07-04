@@ -12,7 +12,7 @@ import Dimensional
 public class Regression {
 
     var ß: [Double] = [Double]()
-    var degree: Int = 0
+    public var degree: Int = 0
 
     public init() {
     }
