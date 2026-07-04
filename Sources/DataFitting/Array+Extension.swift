@@ -11,19 +11,19 @@ import Foundation
 extension Array where Element: FloatingPoint {
     
     /// Returns the sum of all elements in the array
-    func sum() -> Element {
+    public func sum() -> Element {
         return self.reduce(0, +)
     }
     
     /// Returns the average of all elements in the array
-    func avg() -> Element {
+    public func avg() -> Element {
         return self.isEmpty ? 0 : self.sum() / Element(self.count)
     }
     
     /// Returns the variance of the Array (entire population) or unbiased sample
     /// population.
     /// Differentiate between population variance and sample variance.
-    func stdev(unbiased: Bool = false) -> Element {
+    public func stdev(unbiased: Bool = false) -> Element {
         precondition(!unbiased || self.count > 1, "Unbiased sample stdev requires at least 2 elements.")
         let mean = self.avg()
         let variance = self.reduce(0, { $0 + ($1-mean)*($1-mean) })
@@ -34,7 +34,7 @@ extension Array where Element: FloatingPoint {
     /// Returns the mean, variance and std deviation (entire population) or unbiased
     /// sample population.
     /// Differentiate between population variance and sample variance.
-    func stats(unbiased: Bool = false) -> (Element,Element,Element) {
+    public func stats(unbiased: Bool = false) -> (Element,Element,Element) {
         precondition(!unbiased || self.count > 1, "Unbiased sample stats require at least 2 elements.")
         let factor = unbiased ? Element(self.count) / Element(self.count-1) : 1
         typealias Accumulator = (Element,Element)

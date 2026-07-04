@@ -15,7 +15,7 @@ public class KernelSmoothing {
     public var xpoints: [Double] = [Double]()
     public var yhat: [Double] = [Double]()
 
-    init() {
+    public init() {
     }
 
     /// Allocates a new Nadaraya-Watson kernel smoother using a kernel of choice.

@@ -14,7 +14,7 @@ public class Regression {
     var ß: [Double] = [Double]()
     var degree: Int = 0
 
-    init() {
+    public init() {
     }
     
     public init(points: [CGPoint], degree: Int = 1) {

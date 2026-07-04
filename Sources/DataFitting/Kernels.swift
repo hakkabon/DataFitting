@@ -37,6 +37,7 @@ public struct Gaussian: KernelFunction {
         return sqrtpi * (1.0 / sigma) * exp(-0.5 * (pow(x, 2.0) / pow(sigma, 2.0)))
     }
 }
+
 public struct Gauss: KernelFunction {
     public var bandwidth: Double = 0.5 {
         willSet(newValue) {
@@ -54,6 +55,7 @@ public struct Gauss: KernelFunction {
     }
     public func eval(_ x: Double) -> Double { return exp(-0.5 * x * x) }
 }
+
 public struct Boxcar: KernelFunction {
     public var bandwidth: Double = 0.5 {
         willSet(newValue) {
@@ -71,6 +73,7 @@ public struct Boxcar: KernelFunction {
     }
     public func eval(_ x: Double) -> Double { return abs(x) <= 1 ? 0.5 : 0 }
 }
+
 public struct Epanechnikov: KernelFunction {
     public var bandwidth: Double
     public var range: Double
@@ -82,6 +85,7 @@ public struct Epanechnikov: KernelFunction {
     }
     public func eval(_ x: Double) -> Double { return abs(x) <= 1 ? 0.75 * ( 1 - x*x ) : 0 }
 }
+
 public struct Tricube: KernelFunction {
     public var bandwidth: Double
     public var range: Double

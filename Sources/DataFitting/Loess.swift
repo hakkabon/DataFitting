@@ -26,7 +26,7 @@ public class Loess {
     public var y: [Double] = [Double]()
     public var yhat: [Double] = [Double]()
 
-    init() {
+    public init() {
     }
 
     public init(data: [CGPoint], bandwidth: Double = 0.3, iterations: Int = 2, accuracy: Double = 1e-12) {
